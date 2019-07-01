@@ -6,6 +6,8 @@ language: go
 go:
 - 1.12
 
+script: go test -v ./... && go build
+
 deploy:
   provider: releases
   api_key:
