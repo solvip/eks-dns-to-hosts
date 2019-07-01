@@ -11,6 +11,7 @@ deploy:
   api_key:
     secure: qQIendyv6Q9/PIZlNY7l+Y0HECfFKMppN3W6tGZfbDCx2hbPzfzeO7dNvLtpSCOKDfA2y+vTdHr3gsN2WzGKavbUu3KHCoPOnTDkh417foydlp2MhilCjAhgn+t01RMcLrxubKIgmQoWi9dz5JSalhxe+YhahLqqqHuWp8wDC2daWWKFTbO+vm1Zd1qMsUfrPFreaiKc3H6k1GxPWYmk10k+gcowoDQYe4blKi+6oYJsK8cpLQlo92/CksCmN3LxUxls+BKWBIXcQ4+tW5kkomMD8skNh/6qmHQmelTcsAKO0fyQa8jBEwY9oI+rK6LoCtA+LmDUCACB+CTcFuj8XDkflB10Fv9TQfbwv06aH2ktIgPM6JaSsd0dcsHpclIKu2/fuYTxAtWdjxAqzx7VTQbumBx/vXQCbNtIjNx2AZHMfp77krwhYvTdjbjBrfs1T3qFch457f0y9GsxYaD18K32UM0n3b7OWTJJc3BjpivPnoTuhCxV9UsQb+fJCVBvbX3oo4FEoWBj3cgZ4MMolEA61w6LDNSeJAx6h+zZXPBLxICAXv3AKo9nPbbIyfIvaKUy92Y5O8CZTqrBCqiUMareMsXBj89p5cNrtct5OK64jgjx855+3+gb2QTVkZ3/IvMk4X4jXi+bbaMecqUHRyU1LAvZDax3pLfyXFJLIKg=
   file: eks-dns-to-hosts
+  skip_cleanup: true
   on:
     tags: true
     repo: solvip/eks-dns-to-hosts
