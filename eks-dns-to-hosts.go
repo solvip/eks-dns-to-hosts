@@ -14,6 +14,11 @@ import (
 )
 
 func main() {
+	if len(os.Args) != 2 {
+		fatalf("usage: %s <eks cluster name>\nexample: %s kubedev\n", os.Args[0], os.Args[0])
+	}
+	clusterName := os.Args[1]
+
 	sess, err := session.NewSessionWithOptions(session.Options{
 		SharedConfigState: session.SharedConfigEnable,
 	})
@@ -25,14 +30,14 @@ func main() {
 	eksSvcClient := eks.New(sess)
 	ec2SvcClient := ec2.New(sess)
 
-	endpoint, err := getClusterEndpoint(eksSvcClient, "kubedev")
+	endpoint, err := getClusterEndpoint(eksSvcClient, clusterName)
 	if err != nil {
 		fatalf("unable to get cluster endpoint: %s\n", err)
 	} else if endpoint == "" {
 		fatalf("empty cluster endpoint returned from aws\n")
 	}
 
-	ips, err := getClusterControlPlaneIPs(ec2SvcClient, "kubedev")
+	ips, err := getClusterControlPlaneIPs(ec2SvcClient, clusterName)
 	if err != nil {
 		fatalf("unable to get cluster control plane ip addresses: %s\n", err)
 	}
